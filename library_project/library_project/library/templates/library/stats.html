@@ -1,0 +1,64 @@
+{% extends 'library/base.html' %}
+<head>
+    table {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 10px;
+  vertical-align: top;
+}
+
+ul {
+  margin: 0;
+}
+
+</head>
+{% block content %}
+<h2>📚 Library Stats</h2>
+
+<div class="stats-overview" style="margin-bottom: 2rem;">
+  <ul style="list-style: none; padding: 0;">
+    <li><strong>Total Books:</strong> {{ stats.books_count }}</li>
+    <li><strong>Total Authors:</strong> {{ stats.authors_count }}</li>
+    <li><strong>Total Categories:</strong> {{ stats.categories_count }}</li>
+    <li><strong>Total Registered Users:</strong> {{ stats.users_count }}</li>
+  </ul>
+</div>
+
+<h3>👤 User Login Statistics</h3>
+
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; text-align: left;">
+  <thead style="background-color: #f0f0f0;">
+    <tr>
+      <th>User</th>
+      <th>Registered On</th>
+      <th>Last Login</th>
+      <th>Login Count</th>
+      <th>Login Times</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in stats.user_login_data %}
+    <tr>
+      <td>{{ user.username }}</td>
+      <td>{{ user.joined|date:"M d, Y, h:i A" }}</td>
+      <td>{{ user.last_login|date:"M d, Y, h:i A" }}</td>
+      <td>{{ user.login_count }}</td>
+      <td>
+        {% if user.login_times %}
+          <ul style="padding-left: 1rem;">
+            {% for time in user.login_times %}
+              <li>{{ time|date:"M d, Y, h:i A" }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <em>No logins recorded</em>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

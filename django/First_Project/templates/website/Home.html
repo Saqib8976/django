@@ -1,0 +1,35 @@
+{% load tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django{% endblock %} </title>
+    {% tailwind_css %}
+    {% comment %} <link rel="stylesheet" href="{% static 'website/styles.css' %}"> {% endcomment %}
+
+    
+</head>
+
+<body>
+<nav class="bg-blue-950 text-white font-serif p-4">
+  <div class="flex justify-between items-center">
+    <!-- Left-aligned Logo -->
+    <div class="text-xl font-bold ml-4">Website</div>
+
+    <!-- Right-aligned navigation links -->
+    <ul class="flex space-x-6 mr-4 list-none">
+      <li><a href="#home" class="hover:underline">Home</a></li>
+      <li><a href="#news" class="hover:underline">News</a></li>
+      <li><a href="#contact" class="hover:underline">Contact</a></li>
+      <li><a href="#about" class="hover:underline">About</a></li>
+    </ul>
+  </div>
+</nav>
+    {% block content %}{% endblock %}
+
+</body>
+
+</html>

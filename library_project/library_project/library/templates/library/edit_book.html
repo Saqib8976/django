@@ -1,0 +1,12 @@
+{% extends 'library/base.html' %}
+{% block title %}Edit Book{% endblock %}
+{% block content %}
+<div class="card shadow p-5">
+    <h2 class="mb-4">Edit Book: {{ book.title }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-warning">Update Book</button>
+    </form>
+</div>
+{% endblock %}

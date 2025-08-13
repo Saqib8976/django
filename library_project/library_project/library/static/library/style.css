@@ -1,0 +1,21 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    margin: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}

@@ -1,0 +1,18 @@
+{% extends 'library/base.html' %}
+
+{% block title %}Add Author{% endblock %}
+
+{% block content %}
+    <div class="card p-4 shadow">
+        <h2 class="text-center mb-4">Add New Author</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Add Author</button>
+                <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+

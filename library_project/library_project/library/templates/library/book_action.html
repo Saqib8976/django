@@ -1,0 +1,12 @@
+{% extends 'library/base.html' %}
+{% block title %}Rent or Buy{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h3 class="mb-4">Rent or Buy "{{ book.title }}"</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+    </form>
+</div>
+{% endblock %}

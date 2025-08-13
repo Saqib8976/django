@@ -1,0 +1,16 @@
+{% extends "website/Home.html" %}
+{% load tailwind_tags %}
+
+{% block title %}Hello Page{% endblock %}
+{% tailwind_css %}
+
+{% block content %}
+<h1 class="bg-cyan-500 text-amber-50">Hello, {{name}}</h1>
+
+<form action ='add' class="mt-2 p-2 border border-gray-300 rounded bg-white text-black">
+enter first number: <input type="number" name="num1" placeholder="Enter number" class="mt-2 p-2 border border-gray-300 rounded bg-white text-black"><br>
+enter second number: <input type="number" placeholder="enter number" name='num2'class="mt-2 p-2 border border-gray-300 rounded bg-white text-black"><br>
+<button type="submit" class="mt-6 p-2 border border-gray-300 rounded bg-blue-400 text-black">submit</button>
+</form>
+
+{% endblock %}

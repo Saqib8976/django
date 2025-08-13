@@ -1,0 +1,67 @@
+For Python 3.3 or newer, Commands for installing, creating and activate virtual environment has been changed.
+
+
+You can install virtual environment using pip:
+pip install virtualenvwrapper-win
+OR
+py -m pip install --user virtualenv
+
+
+For creating new environment:
+py -m venv myproject
+
+To activate your virtual environment:
+.\myproject\Scripts\activate                          
+
+if activate command not work on vscode then run powershell as admin then set execution policy by typing:
+Set-ExecutionPolicy RemoteSigned
+
+then check currunt policy:
+Get-ExecutionPolicy
+
+After activating virtual environment, You’ll see “(myproject)” next to the command prompt
+
+
+Django:
+pip install django
+django-admin --version
+
+create project folder:
+mkdir projects
+cd projects
+
+start project:
+django-admin startproject saqib
+cd saqib
+
+dir
+ls in linux and dir in window to check all files
+
+--->run project
+    python manage.py runserver
+
+
+
+#also we use uv python package manager
+pip install uv
+
+#to create virtual environment 
+uv venv
+
+#activate venv 
+.venv\Scripts\activate
+
+#to install any package in venv 
+uv pip install package_name
+
+
+
+#add extension of vscode django 
+
+# add emmet laguange in vscode setting 
+item : django-html
+value : html
+
+
+# migrate
+python manage.py migrate

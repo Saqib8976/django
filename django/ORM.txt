@@ -1,0 +1,13 @@
+--> ORM is stands for object relational mapper.
+
+-->based on class ORM creates tables and put/add the data on table with the help of objects.
+
+--> to connect with database we use different databases like SQLite , MySQL , postgres etc
+
+--> to connect it 1st we create database on whetever you use to connect like we use postgres then we create database on that to connect with project
+
+--> to connect with or work with postgres we download it first or also we install adapter on terminal to connect with postgres 
+
+--> and SQLite is a default Django database so no need to configure on setting if you use SQLite to access admin panel on it we run command on terminal 
+python manage.py craetesuperuser
+

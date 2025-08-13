@@ -1,0 +1,38 @@
+#in venv 
+-->pip install django-tailwind   
+
+#if you created venv from uv then check reload command if it shows audited then run another command
+-->uv pip install 'django-tailwind[reload]'       
+
+# python -m ensurepip --upgrade    
+#python -m pip install upgrade pip
+
+#now we use pip to reload instead of uv 
+--> pip install 'django-tailwind[reload]'  
+
+####after succesfull tailwind installation add tailwind to django_project settings in installed app 'tailwind'      
+
+go to Django project
+-->cd django_project
+
+#run
+python manage.py tailwind init    
+
+#after running tailwind init add 'theme' to installed app in Django_project settings
+
+
+---> add after installed app in project setting
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = ['127.0.0.1']
+
+NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"  # Adjust if it's different
+
+
+##now install tailwind through manage.py
+python manage.py tailwind install
+
+-->django tailwind
+https://pypi.org/project/django-tailwind/ 
+
+--> django reload
+https://pypi.org/project/django-browser-reload/

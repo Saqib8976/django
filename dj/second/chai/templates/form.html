@@ -1,0 +1,24 @@
+{% extends "home.html" %}
+
+{% block title %}addition{% endblock %}
+
+{% block content %}
+
+   <h1 class="flex justify-center items-center bg-gray-100 mt-6 text-2xl ">Hello {{name}} </h1>
+
+<div class="flex justify-center items-center bg-gray-100">
+
+  <form action="addition/" method="post" class="p-5 bg-blue-400 text-white w-96 rounded shadow-md whitespace-nowrap">
+    {% csrf_token %}
+    <label for="num1">Enter first number: </label>
+    <input type="number" name="num1" class="p-1 border border-black rounded ml-8 mb-6"><br>
+
+    <label for="num2">Enter second number: </label>
+    <input type="number" name="num2" class="p-1 border border-black rounded ml-2"><br>
+
+    <button type="submit" class="bg-black border border-black rounded mt-8 ml-32 px-4 py-1">submit</button>
+  </form>
+</div>
+
+</form>
+{% endblock %}

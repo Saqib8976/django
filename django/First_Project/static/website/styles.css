@@ -1,0 +1,38 @@
+.navbar {
+
+    color: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1rem;
+    margin: -0.5rem;
+    
+
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 1.7rem;
+}

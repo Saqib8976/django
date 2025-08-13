@@ -1,0 +1,81 @@
+{% extends 'library/base.html' %}
+{% block title %}Library Books{% endblock %}
+{% block content %}
+<div class="container d-flex flex-column justify-content-center align-items-center mt-5">
+    <div class="card p-4 shadow-lg border-0 mb-5" style="width: 80%; border-radius: 1.5rem; background: rgba(0,0,0,0.75);">
+        <h2 class="text-center text-light mb-4">Library Books</h2>
+        <a href="{% url 'add_book' %}" class="btn btn-primary mb-3 shadow-3d">Add New Book</a>
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Category</th>
+                    <th>Publication Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td><a href="{% url 'book_detail' book.id %}" class="text-light">{{ book.title }}</a></td>
+                        <td>{{ book.author_names }}</td>
+                        <td>{{ book.category.name }}</td>
+                        <td>{{ book.publication_date }}</td>
+                        <td>
+                            <a href="{% url 'edit_book' book.id %}" class="btn btn-warning btn-sm shadow-3d">Edit</a>
+                            <a href="{% url 'delete_book' book.id %}" class="btn btn-danger btn-sm shadow-3d">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="bg-animation"></div>
+</div>
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background-color: #111;
+    }
+
+    .btn {
+        transition: transform 0.3s ease;
+        border-radius: 50px;
+    }
+
+    .btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .shadow-3d {
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .bg-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://source.unsplash.com/1920x1080/?books,library') no-repeat center center fixed;
+        background-size: cover;
+        filter: blur(8px);
+        z-index: -1;
+        animation: moveBackground 15s infinite alternate;
+    }
+
+    @keyframes moveBackground {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+</style>
+{% endblock %}
+

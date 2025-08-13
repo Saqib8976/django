@@ -1,0 +1,9 @@
+{% extends 'library/base.html' %}
+{% block title %}Payment Successful{% endblock %}
+{% block content %}
+<div class="container mt-5 text-center">
+    <h2 class="text-success"><i class="fas fa-check-circle me-2"></i>Payment Successful!</h2>
+    <p>You have successfully {{ action }}ed the book using {{ payment_method }}.</p>
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3">Back to Home</a>
+</div>
+{% endblock %}

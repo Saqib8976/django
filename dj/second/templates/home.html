@@ -1,0 +1,31 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django{% endblock %} </title>
+ 
+  {% tailwind_css %}
+
+   
+</head>
+
+<body>
+    <nav class="navbar bg-blue-950 text-white bg">
+        <div class="navdiv flex items-center justify-between px-4 py-2">
+            <div class="logo mr-4">My Website</div>
+            <ul class="flex space-x-5 ml-auto">
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="form">Addition</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+
+</body>
+
+</html>

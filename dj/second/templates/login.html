@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="login">
+  <div class="form">
+    <form class="login-form" method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="username" />
+      <input type="password" name="password" placeholder="password" />
+      <button>Login</button>
+      <p class="alternate">
+        Dont have an account?<a href="{% url 'register' %}">Register</a>
+      </p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+{% extends 'library/base.html' %}
+{% block title %}Library Home{% endblock %}
+{% block content %}
+<div class="card shadow p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0"><i class="fas fa-book-open text-primary me-2"></i>Library Books</h2>
+        <a href="{% url 'add_book' %}" class="btn btn-success btn-icon">
+            <i class="fas fa-plus"></i> Add New Book
+        </a>
+    </div>
+
+    <!-- Search Field -->
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="fas fa-search"></i></span>
+        <input type="text" class="form-control" id="bookSearch" placeholder="Search by title, author or category...">
+    </div>
+
+    <!-- Book Table -->
+    <div class="table-responsive">
+        <table class="table table-hover align-middle" id="bookTable">
+            <thead class="table-light">
+                <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Category</th>
+                    <th>Publication Date</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'book_detail' book.id %}" class="text-decoration-none">
+                                <strong>{{ book.title }}</strong>
+                            </a>
+                        </td>
+                        <td>{{ book.author_names }}</td>
+                        <td><span class="badge bg-info text-dark">{{ book.category.name }}</span></td>
+                        <td>{{ book.publication_date }}</td>
+                        <td class="text-end">
+                            <a href="{% url 'edit_book' book.id %}" class="btn btn-sm btn-warning me-1">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="{% url 'delete_book' book.id %}" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Optional JS Filtering -->
+<script>
+    document.getElementById('bookSearch').addEventListener('keyup', function () {
+        const query = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#bookTable tbody tr');
+        rows.forEach(row => {
+            const text = row.innerText.toLowerCase();
+            row.style.display = text.includes(query) ? '' : 'none';
+        });
+    });
+</script>
+{% endblock %}
