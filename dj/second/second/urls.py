@@ -25,7 +25,7 @@ urlpatterns = [
     path("home/",home,name='home'),
     path("",include("travelo.urls")),
 
-    path("home/form/",include("chai.urls")),
+    path("home/",include("chai.urls")),
     path("accounts/",include("accounts.urls")),
 
 
