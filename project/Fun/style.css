@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+nav {
+    background-color: rgb(37, 9, 37);
+    color: white;
+    height: 70px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-family: 'roboto', sans-serif;
+
+
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+.gamecontainer {
+    /* background-color: beige; */
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    /*repeat(no. of time repeated , size of the column*/
+    grid-template-rows: repeat(3, 10vw);
+    font-family: 'roboto', sans-serif;
+}
+
+.box {
+    border: 2px solid black;
+    font-size: 12vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: aquamarine;
+
+}
+
+.btn {
+    font-size: 6vw;
+    background-color: aquamarine;
+
+    border: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9.6vw;
+    width: 9.6vw;
+    color: black;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(238, 232, 238);
+}
+
+.box:hover {
+    background-color: rgb(238, 232, 238);
+}
+
+#reset {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: black;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+
+}
+
+.info {
+    font-size: large;
+    padding-right: 0.5rem;
+}
+
+
+.gameinfo {
+    padding: 0 35px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.imgbox img {
+    display: none;
+}
+
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
