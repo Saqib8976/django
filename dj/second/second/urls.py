@@ -22,10 +22,10 @@ from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path("",home,name='home'),
+    path("home/",home,name='home'),
     path("",include("travelo.urls")),
 
-    path("form/",include("chai.urls")),
+    path("home/form/",include("chai.urls")),
     path("accounts/",include("accounts.urls")),
 
 
